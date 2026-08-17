@@ -225,7 +225,7 @@ function App() {
 
       const id =
         data.applicationId ||
-        data.data?._id ||
+        data.id ||
         "Successfully Submitted";
 
 
