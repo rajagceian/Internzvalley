@@ -46,7 +46,7 @@ async function candidateDetails(req,res){
             resume:resume.url
         })
         res.status(201).json(
-            new ApiResponse(201,"Information collected successfull")
+            new ApiResponse(201,"Information collected successfully")
         );
     }catch(err){
         console.log("Error in controller : ",err.message);
