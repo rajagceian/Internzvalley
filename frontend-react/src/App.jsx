@@ -262,7 +262,15 @@ function App() {
     return (
 
       <div className="page">
-
+        {loading && (
+  <div className="loading-overlay">
+    <div className="loader-card">
+      <div className="spinner"></div>
+      <p>Submitting your application...</p>
+      <small>Please wait, do not close this page.</small>
+    </div>
+  </div>
+ )}
         <Header />
 
         <section className="success-banner">
