@@ -32,7 +32,7 @@ async function candidateDetails(req,res){
         if(!resume){
             throw new ApiError(400,"Resume is required");
         }
-        await Candidate.create({
+        const candidate = await Candidate.create({
             name,
             email,
             phoneNumber,
@@ -46,7 +46,8 @@ async function candidateDetails(req,res){
             resume:resume.url
         })
         res.status(201).json(
-            new ApiResponse(201,"Information collected successfully")
+            {message : "Information collected successfully",
+            id : candidate._id})
         );
     }catch(err){
         console.log("Error in controller : ",err.message);
