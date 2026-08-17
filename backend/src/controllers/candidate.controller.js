@@ -47,7 +47,7 @@ async function candidateDetails(req,res){
         })
         res.status(201).json(
             {message : "Information collected successfully",
-            id : candidate._id})
+            id : candidate._id}
         );
     }catch(err){
         console.log("Error in controller : ",err.message);
