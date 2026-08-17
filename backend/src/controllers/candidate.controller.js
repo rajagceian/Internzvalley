@@ -9,7 +9,7 @@ async function candidateDetails(req,res){
             email,phoneNumber,whatsappNumber,
             collegeName,
             registrationNumber,
-            branch,
+            branch,cgpa,
             passoutYear} = req.body;
         const fixedSize = 5*1024*1024; // max 5MB
         const photoLocalPath = req.files?.photo[0]?.path;
@@ -40,6 +40,7 @@ async function candidateDetails(req,res){
             collegeName,
             registrationNumber,
             branch,
+            cgpa,
             passoutYear,
             photo:photo.url,
             resume:resume.url
