@@ -436,14 +436,30 @@ function App() {
               />
 
 
-              {/* COLLEGE */}
+ {/* COLLEGE */}
 
-              <FormField
-                label="College Name"
-                name="collegeName"
-                placeholder="Enter your college / university name"
-                full
-              />
+<div className="form-group full">
+
+  <label>
+    College Name <span>*</span>
+  </label>
+
+  <select
+    name="collegeName"
+    required
+  >
+
+    <option value="">
+      Select your college
+    </option>
+
+    <option value="Gaya College of Engineering, Gaya">
+      Gaya College of Engineering, Gaya
+    </option>
+
+  </select>
+
+</div>
 
 
               {/* REGISTRATION */}
