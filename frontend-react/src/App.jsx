@@ -484,7 +484,7 @@ function App() {
                     Electronics & Communication Engineering
                   </option>
 
-                  <option value="EE">
+                  <option value="EEE">
                     Electrical & Electronics Engineering
                   </option>
 
