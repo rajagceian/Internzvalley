@@ -282,7 +282,7 @@ function App() {
               <strong>
                 {" "}Business Development Associate
               </strong>
-              {" "}position.
+              {" "}position at Internzvalley.
             </p>
 
             <p>
@@ -358,8 +358,8 @@ function App() {
 
         <p>
           Apply for the Business Development Associate
-          opportunity. Please provide accurate details
-          and upload your latest resume.
+          opportunity at Internzvalley. Please provide
+          accurate details and upload your latest resume.
         </p>
 
       </section>
@@ -503,6 +503,19 @@ function App() {
                 </select>
 
               </div>
+
+
+              {/* CGPA */}
+
+              <FormField
+                label="CGPA"
+                name="cgpa"
+                type="number"
+                placeholder="Enter your current CGPA"
+                min="0"
+                max="10"
+                step="0.01"
+              />
 
 
               {/* PASSOUT */}
@@ -714,7 +727,7 @@ function Header() {
     <header>
 
       <div className="logo">
-        PERSEVEX
+        INTERNZVALLEY
       </div>
 
       <div className="header-tag">
@@ -752,6 +765,9 @@ function FormField({
   type = "text",
   placeholder,
   maxLength,
+  min,
+  max,
+  step,
   full = false
 }) {
 
@@ -772,6 +788,9 @@ function FormField({
         name={name}
         placeholder={placeholder}
         maxLength={maxLength}
+        min={min}
+        max={max}
+        step={step}
         required
       />
 
