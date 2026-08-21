@@ -68,9 +68,8 @@ async function candidateDetails(req, res) {
       hasLaptop,
       resume: resume.url,
     });
-
-    return res.status(201).json(
-      new ApiResponse(201, "Information collected successfully", {
+    return res.status(201).json({
+        message : "Information collected successfully",
         applicationId: candidate._id,
       })
     );
