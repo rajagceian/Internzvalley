@@ -20,10 +20,6 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.post("/api/candidate-info",
      upload.fields([
         {
-            name: "photo",
-            maxCount: 1
-        },
-        {
             name: "resume",
             maxCount: 1
         }
