@@ -11,8 +11,7 @@ const candidateSchema = new mongoose.Schema({
       type: String,
       required: true,
       trim: true,
-      lowercase: true,
-        unique: true
+      lowercase: true
     },
 
     phoneNumber: {
@@ -34,32 +33,39 @@ const candidateSchema = new mongoose.Schema({
     registrationNumber: {
       type: String,
       required: true,
-      trim: true,
-      unique:true
+      unique : true,
+      trim: true
     },
 
     branch: {
       type: String,
       required: true
     },
-    cgpa:{
-        type:Number,
-        required: true
+    cgpa : {
+      type :Number,
+      required : true
     },
-   
     passoutYear: {
       type: Number,
       required: true
     },
 
-    photo: {
-      type: String,
-      required: true
-    },
+    // photo: {
+    //   type: String,
+    //   required: true
+    // },
 
     resume: {
       type: String,
       required: true
+    },
+    backlogs : {
+      type : String,
+      required : true,
+    },
+    hasLaptop : {
+      type : String,
+      required : true,  
     }
   },{timestamps : true});
 
