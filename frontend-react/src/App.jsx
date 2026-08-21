@@ -155,21 +155,21 @@ function App() {
     }
 
 
-    const photo =
-      form.photo.files[0];
+    // const photo =
+    //   form.photo.files[0];
 
     const resume =
       form.resume.files[0];
 
 
-    if (!photo) {
+    // if (!photo) {
 
-      setPhotoError(
-        "Please upload your photo."
-      );
+    //   setPhotoError(
+    //     "Please upload your photo."
+    //   );
 
-      return;
-    }
+    //   return;
+    // }
 
 
     if (!resume) {
@@ -255,6 +255,22 @@ function App() {
   };
 
 
+  /* ================= LOADER (shown while the request is in-flight) ================= */
+
+  const Loader = () => (
+
+    <div className="loading-overlay">
+
+      <div className="loader-card">
+        <div className="spinner"></div>
+        <p>Submitting your application...</p>
+        <small>Please wait, do not close this page.</small>
+      </div>
+
+    </div>
+  );
+
+
   /* ================= CONFIRMATION ================= */
 
   if (submitted) {
@@ -262,15 +278,7 @@ function App() {
     return (
 
       <div className="page">
-        {loading && (
-  <div className="loading-overlay">
-    <div className="loader-card">
-      <div className="spinner"></div>
-      <p>Submitting your application...</p>
-      <small>Please wait, do not close this page.</small>
-    </div>
-  </div>
- )}
+
         <Header />
 
         <section className="success-banner">
@@ -288,9 +296,9 @@ function App() {
             <p>
               Thank you for applying for the
               <strong>
-                {" "}Business Development Associate
+                {" "}STEAM/Robotics Trainer
               </strong>
-              {" "}position at Internzvalley.
+              {" "}position at Aviotron Aerospace Pvt. Ltd.
             </p>
 
             <p>
@@ -355,19 +363,21 @@ function App() {
 
     <div className="page">
 
+      {loading && <Loader />}
+
       <Header />
 
 
       <section className="banner">
 
         <h1>
-          BDA – Student Application
+          STEAM/Robotics Trainer – Student Application
         </h1>
 
         <p>
-          Apply for the Business Development Associate
-          opportunity at Internzvalley. Please provide
-          accurate details and upload your latest resume.
+          Apply for the STEAM/Robotics Trainer opportunity at
+          Aviotron Aerospace Pvt. Ltd. Please provide accurate
+          details and upload your latest resume.
         </p>
 
       </section>
@@ -385,7 +395,8 @@ function App() {
             Fill in your details carefully.
             All fields marked with
             <span className="required"> *</span>
-            are mandatory.
+            are mandatory. Eligibility requires no active
+            backlogs and a minimum 6.5 CGPA.
           </p>
 
 
@@ -500,10 +511,6 @@ function App() {
                     Computer Science & Engineering
                   </option>
 
-                  <option value="IT">
-                    Information Technology
-                  </option>
-
                   <option value="ECE">
                     Electronics & Communication Engineering
                   </option>
@@ -516,12 +523,8 @@ function App() {
                     Mechanical Engineering
                   </option>
 
-                  <option value="CE">
-                    Civil Engineering
-                  </option>
-
                   <option value="Other">
-                    Other
+                    Other (Aerospace / Mechatronics / AI-ML / Robotics)
                   </option>
 
                 </select>
@@ -532,10 +535,10 @@ function App() {
               {/* CGPA */}
 
               <FormField
-                label="CGPA"
+                label="CGPA / Percentage"
                 name="cgpa"
                 type="number"
-                placeholder="Enter your current CGPA"
+                placeholder="Enter your current CGPA or %"
                 min="0"
                 max="10"
                 step="0.01"
@@ -572,9 +575,69 @@ function App() {
               </div>
 
 
-              {/* PHOTO */}
+              {/* BACKLOGS */}
 
               <div className="form-group">
+
+                <label>
+                  Any Active Backlogs? <span>*</span>
+                </label>
+
+                <select
+                  name="backlogs"
+                  required
+                >
+
+                  <option value="">
+                    Select an option
+                  </option>
+
+                  <option value="No">
+                    No
+                  </option>
+
+                  <option value="Yes">
+                    Yes
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              {/* LAPTOP */}
+
+              <div className="form-group">
+
+                <label>
+                  Do you have a personal laptop for work? <span>*</span>
+                </label>
+
+                <select
+                  name="hasLaptop"
+                  required
+                >
+
+                  <option value="">
+                    Select an option
+                  </option>
+
+                  <option value="Yes">
+                    Yes
+                  </option>
+
+                  <option value="No">
+                    No
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              {/* PHOTO */}
+
+              {/* <div className="form-group">
 
                 <label>
                   Passport Size Photo <span>*</span>
@@ -643,7 +706,7 @@ function App() {
 
                 </div>
 
-              </div>
+              </div> */}
 
 
               {/* RESUME */}
@@ -751,7 +814,7 @@ function Header() {
     <header>
 
       <div className="logo">
-        INTERNZVALLEY
+        AVIOTRON AEROSPACE
       </div>
 
       <div className="header-tag">
