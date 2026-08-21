@@ -71,8 +71,7 @@ async function candidateDetails(req, res) {
     return res.status(201).json({
         message : "Information collected successfully",
         applicationId: candidate._id,
-      })
-    );
+      });
   } catch (err) {
     console.log("Error in controller : ", err.message);
 
